@@ -49,6 +49,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseManager.paused) return;
         if(Vector3.Distance(transform.position, destination)>0.1f)
         transform.position = Vector3.MoveTowards(transform.position/*현재위치*/,destination,movementSpeed*Time.deltaTime);
     }
